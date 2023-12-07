@@ -8,7 +8,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - grafana-storage:/var/lib/grafana
+      - ./grafana/data:/var/lib/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning:ro
 
   influxdb:
@@ -37,6 +37,20 @@ services:
   publishers:
     image: /publishers
 
+  mqtt:
+    image: eclipse-mosquitto:2.0.18
+    container_name: mqtt
+    restart: unless-stopped
+    expose:
+      - 1883
+    volumes:
+      - mosquitto-config:/mosquitto/config
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-log:/mosquitto/log
+
 volumes:
   grafana-storage: {}
   influxdfb-storage: {}
+  mosquitto-config: {}
+  mosquitto-data: {}
+  mosquitto-log: {}
