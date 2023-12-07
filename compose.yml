@@ -36,7 +36,7 @@ services:
 
   publishers:
     build:
-      dockerfile: publisher/.dockerfile
+      dockerfile: publisher/Dockerfile
 
   mqtt:
     image: eclipse-mosquitto:2
