@@ -12,13 +12,14 @@ services:
       - ./grafana/provisioning:/etc/grafana/provisioning:ro
 
   influxdb:
-    image: influxdb:2.7
+    image: influxdb:1.8
     container_name: influxdb
     restart: unless-stopped
     ports:
       - "8086:8086"
     volumes:
-      - influxdfb-storage:/var/lib/influxdb2
+      - influxdfb-storage:/var/lib/influxdb
+      - ./influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
     env_file:
       - ./influxdb/influxv2.env
 

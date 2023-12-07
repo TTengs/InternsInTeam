@@ -1,14 +1,13 @@
 apiVersion: 1
 
 datasources:
-  - name: InfluxDB_v2_Flux
+  - name: InfluxDB_v1
     type: influxdb
     access: proxy
+    user: grafana
     url: http://influxdb:8086
     jsonData:
-      version: Flux
-      organization: my-org
-      defaultBucket: my-bucket
-      tlsSkipVerify: true
+      dbName: site
+      httpMode: GET
     secureJsonData:
-      token: my-super-secret-auth-token
+      password: grafana
