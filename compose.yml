@@ -35,13 +35,14 @@ services:
       - ./influxdb/influxv2.env
 
   mqtt:
-    image: eclipse-mosquitto:2.0.18
+    image: eclipse-mosquitto:2
     container_name: mqtt
     restart: unless-stopped
     expose:
       - 1883
+      - 9001
     volumes:
-      - mosquitto-config:/mosquitto/config
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
       - mosquitto-data:/mosquitto/data
       - mosquitto-log:/mosquitto/log
 
