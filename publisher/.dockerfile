@@ -6,8 +6,8 @@ FROM python:3.6.7
 WORKDIR /usr/app/src
 
 #to COPY the remote file at working directory in container
-COPY publish.py ./
-COPY tools.txt ./
+COPY publisher/publish.py ./
+COPY publisher/tools.txt ./
 # Now the structure looks like this '/usr/app/src/test.py'
 
 RUN pip3 install paho-mqtt

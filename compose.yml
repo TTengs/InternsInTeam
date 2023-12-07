@@ -35,7 +35,8 @@ services:
       - ./influxdb/influxv2.env
 
   publishers:
-    image: /publishers
+    build:
+      dockerfile: publisher/.dockerfile
 
   mqtt:
     image: eclipse-mosquitto:2.0.18
