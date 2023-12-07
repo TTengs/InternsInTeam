@@ -1,14 +1,8 @@
-[config]
-  url = "http://localhost:8086"
-  token = "my-super-secret-auth-token"
-  org = "my-org"
-  active = true
-
 [default]
   url = "http://localhost:8086"
   token = "my-super-secret-auth-token"
   org = "my-org"
-  previous = true
+  active = true
 # 
 # [eu-central]
 #   url = "https://eu-central-1-1.aws.cloud2.influxdata.com"
