@@ -19,6 +19,7 @@ services:
       - "8086:8086"
     volumes:
       - influxdfb-storage:/var/lib/influxdb
+      - ./influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
     env_file:
       - ./influxdb/influxv2.env
 
