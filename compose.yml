@@ -35,6 +35,7 @@ services:
       - ./influxdb/influxv2.env
 
   publishers:
+    restart: unless-stopped
     build:
       context: "./publisher"
 

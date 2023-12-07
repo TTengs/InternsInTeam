@@ -38,7 +38,7 @@ if __name__ == '__main__':
       timestamp = int(time.time() * 1_000_000_000)
       machine = random.choice(["machine1", "machine2"])
 
-      topicName = f"{machine}/lid"
+      topicName = f"lid/{machine}"
       message = f'lid reason="{tool}",result="{result}" {timestamp}'
 
       # print(f"Publishing message {message} to topic {topicName}")
