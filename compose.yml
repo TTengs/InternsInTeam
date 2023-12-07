@@ -34,6 +34,9 @@ services:
     env_file:
       - ./influxdb/influxv2.env
 
+  publishers:
+    image: /publishers
+
 volumes:
   grafana-storage: {}
   influxdfb-storage: {}
