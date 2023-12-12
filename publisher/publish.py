@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
    starttime = time.monotonic()
    while True:
-      result = random.choice(["accepted", "rejected"]).strip()
+      result = random.choices(["accepted", "rejected"], weights=(0.9, 0.1))[0]
       tool = random.choice(lines).strip()
       timestamp = int(time.time() * 1_000_000_000)
       machine = random.choice(["machine1", "machine2"])
